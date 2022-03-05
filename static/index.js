@@ -99,7 +99,7 @@ function deleteItem() {
     result.splice(index, 1)
 
     search(document.querySelector('.search-box').value)
-    showItems(filterItems)
+    // showItems(filterItems)
 
     document.querySelector('.text').innerHTML = 'DELETED'
 }
