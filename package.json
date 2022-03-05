@@ -1,0 +1,15 @@
+{
+  "name": "Memo",
+  "version": "1.0.0",
+  "description": "NodeJS light Memo for browser ",
+  "main": "index.js",
+  "repository": "git@github.com:yaoang/memo.git",
+  "author": "yaoang <fyan888@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2"
+  }
+}

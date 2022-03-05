@@ -1,0 +1,129 @@
+html, body {
+    background-color: #353232;
+    height: 100%;
+    margin: 0;
+}
+
+.allContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    align-items: flex-start;
+    overflow: scroll;
+    height: 100%;
+}
+
+.left {
+    margin-right: 20px;
+    vertical-align: top;
+    flex:1;
+}
+
+.left .tree {
+    padding: 10px;
+}
+
+.right {
+    flex: 9;
+    height: 98%;
+    padding-right: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgb(254, 255, 180);
+}
+
+a {
+    color: rgb(254, 255, 180);
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    font-weight: 1000;
+    text-decoration: underline;
+}
+
+.mainContainer {
+    display: flex;
+    max-height: 100%;
+    flex-direction: column;
+}
+
+.mainContainer .search {
+    margin:10px 0;
+}
+
+.mainContainer .search input {
+    width: 200px;
+}
+
+.mainContainer .history {
+    display: flex;
+    overflow-y: auto;
+    flex: 9;
+    flex-direction: row;
+    /* border: 3px solid green; */
+    height: 100%;
+}
+
+.mainContainer .history .list {
+    overflow-y: auto;
+    border: 1px solid #b6b6b6;
+    flex: 2;
+    padding: 10px;
+}
+
+.mainContainer .history .content {
+    overflow-y: auto;
+    border: 1px solid #b6b6b6;
+    flex: 5;
+    padding: 10px;
+    color:#fff;
+    min-height: 100%;
+}
+
+.mainContainer .history .content .delete {
+    text-align: right;
+}
+
+.mainContainer .editor {
+    padding-top: 10px;
+    flex: 1;
+}
+
+/* .mainContainer .editor .button {
+    text-align: ri;
+} */
+
+textarea {
+    border: 1px solid lightyellow;
+    box-shadow: none;
+    width: 80%;
+    background-color: aliceblue;
+    /* font-size: 20; */
+    font-size: 18px;
+    padding: 10px;
+}
+
+button {
+    width: 80%;
+    height: 30px;
+    color: rgb(254, 255, 180);
+    background-color: transparent;
+    border: 1px solid rgb(254, 255, 180);
+    cursor: pointer;
+}

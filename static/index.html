@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" charset="UTF-8">
+    <title>Memo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="allContent">
+        <div class="left">
+            <div class="tree">
+                <ul>
+                    <li>
+                        <a href="#this">2022-02</a>
+                    </li>
+                    <li>
+                        <a href="#this">2022-01</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="mainContainer">
+                <div class="search">
+                    <input type="text" placeholder="input to search" class="search-box" onkeyup="search(this.value)" >
+                </div>
+                <div class="history">
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#this">Add 3 API to send data, get data, and save files, and test cases</a>
+                            </li>
+                            <li>
+                                <a href="#this">Add 3 API to send data, get data, and save files, and test cases</a>
+                            </li>
+                            <li>
+                                <a href="#this">Add 3 API to send data, get data, and save files, and test cases</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <div class="text" contenteditable="true">
+                            <h1>
+                                Content
+                            </h1>
+                        </div>
+                        <div class="delete">
+                            <a href="#this" onclick="saveEditItem()">Save</a>
+                            <a href="#this" onclick="deleteItem()">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="editor">
+                    <div>
+                        <textarea cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="button">
+                        <button onclick="saveItem(event)">Save</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('textarea').focus()
+
+        initHistory()
+    </script>
+</body>
+
+</html>
