@@ -30,6 +30,9 @@ function showItems(items) {
     history.innerHTML = ''
     items.forEach(item => {
         // console.log(item)
+        if(!item.content) {
+            return
+        }
         const li = document.createElement('li')
         const href = document.createElement('a')
         href.innerText = item.content.replace(/\<br\/\>/g,' ')
@@ -45,13 +48,24 @@ function showMemo(item) {
     currentItemId = item.id
 }
 
-function saveItem(evt) {
+async function saveItem(evt) {
     const html = document.querySelector('textarea').value.replace(/\n/g, '<br/>')
     console.log(html)
-    put({
-        id: new Date() * 1,
-        content: html,
+    const newItem = {
+        content: html
+    }
+    const resp = await fetch('/save', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newItem)
     })
+    const data = await resp.json()
+    if(!data.content) {
+        return
+    }
+    put(data)
     search(document.querySelector('.search-box').value)
     // showItems(items)
 
@@ -73,15 +87,14 @@ function saveEditItem() {
     showItems(filterItems)
 }
 
-function initHistory() {
+async function initHistory() {
     console.log('start to init list')
 
-    for (let i = 0; i < 4; i ++) {
-        put({
-            id: new Date() * 1 + Math.random(),
-            content: i + '. Put new Message at ' + new Date() + Math.random(),
-        })
-    }
+    const resp = await fetch('/all')
+    
+    const data = await resp.json()
+    console.log(data)
+    data.forEach(m => put(m))
 
     const items = getAll()
     filterItems = items
